@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+This node is speed limiter base on pitch. Two interval had to be specified.
+A negative one than a positive one. When no limit is trepass it repeat the
+command send to the controler. When initial limit is obtain the speed
+go to zero linearly to the final limit. IMU is adjust with a front elevation
+positive angle than back elevation negative.
+-->
+<launch>
+
+    <node pkg="speed_limiter" type="speed_limiter.py" name="speed_limiter" output="screen">
+
+    <remap from="imu_topic" to="/MTI_imu/data" />
+    <remap from="speed_limiter/cmd_vel_out" to="/husky_velocity_controller/cmd_vel" />
+
+    <param name="pitch_up_ini" value="2.0"/> <!--angle in degree -->
+    <param name="pitch_up_limit" value="20.0" />
+    <param name="pitch_down_ini" value="-2.0"/>
+    <param name="pitch_down_limit" value="-20.00" />
+    <param name="max_speed_fwd" value="1.0"/>
+    <param name="max_speed_rvs" value="-1.0" />
+    </node>
+
+</launch>
