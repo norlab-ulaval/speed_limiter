@@ -72,12 +72,12 @@ if __name__ == '__main__':
     rospy.loginfo("Speed Limiter running...")
 
     # get the limit parameter of the robot
-    pitch_up_ini = rospy.get_param('~pitch_up_ini')       #initial positive limit
+    pitch_up_ini = rospy.get_param('~pitch_up_ini')         #initial positive limit
     pitch_up_limit = rospy.get_param('~pitch_up_limit')     #limit pitch tolerated
-    pitch_down_ini = rospy.get_param('~pitch_down_ini')   #initial negative limit
+    pitch_down_ini = rospy.get_param('~pitch_down_ini')     #initial negative limit
     pitch_down_limit = rospy.get_param('~pitch_down_limit') #limit pitch tolerated
-    max_speed_fwd = rospy.get_param('~max_speed_fwd')     #foward speed limit
-    max_speed_rvs = rospy.get_param('~max_speed_rvs')     #reverse speed limit
+    max_speed_fwd = rospy.get_param('~max_speed_fwd')       #foward speed limit
+    max_speed_rvs = rospy.get_param('~max_speed_rvs')       #reverse speed limit
 
     #set publisher
 
